@@ -15,6 +15,9 @@ public class RequestTest extends HttpServlet {
 
         System.out.println("进入RequestTest请求\n用户名:"+username+"\n密码："+password);
         resp.sendRedirect("/r/success.jsp");
+
+
+
     }
 
     @Override
