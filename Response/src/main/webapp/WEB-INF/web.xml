@@ -24,4 +24,22 @@
     <url-pattern>/image</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>RedirectServlet</servlet-name>
+    <servlet-class>com.nk.servlet.RedirectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RedirectServlet</servlet-name>
+    <url-pattern>/redirect</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>RequestTest</servlet-name>
+    <servlet-class>com.nk.servlet.RequestTest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RequestTest</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+
 </web-app>
