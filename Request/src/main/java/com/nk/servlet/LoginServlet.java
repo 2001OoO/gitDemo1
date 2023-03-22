@@ -21,7 +21,8 @@ public class LoginServlet extends HttpServlet {
         System.out.println("**********************************");
 
 //        通过请求转发
-        req.getRequestDispatcher("/r/success.jsp");
+        req.getRequestDispatcher("/success.jsp").forward(req,resp);
+
     }
 
     @Override
