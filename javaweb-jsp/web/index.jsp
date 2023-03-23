@@ -13,6 +13,7 @@
     <title>$Title$</title>
   </head>
   <body>
+  <%@include file="common/header.jsp"%>
 
   <%= new java.util.Date()%>
 
@@ -40,5 +41,7 @@
       System.out.println("进入全局代码块");
     }
   %>
+
+  <%@include file="common/footer.jsp"%>
   </body>
 </html>
