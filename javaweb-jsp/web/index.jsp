@@ -43,5 +43,17 @@
   %>
 
   <%@include file="common/footer.jsp"%>
+
+
+
+<%--  Jsp标签--%>
+  <hr>
+  <jsp:include page="/common/header.jsp"></jsp:include>
+
+  <h4>傻屌</h4>
+
+  <jsp:include page="/common/footer.jsp"></jsp:include>
+
+
   </body>
 </html>
