@@ -17,6 +17,24 @@
         <url-pattern>/servlet/show</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>loginservlet</servlet-name>
+        <servlet-class>com.nk.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loginservlet</servlet-name>
+        <url-pattern>/servlet/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>logoutservlet</servlet-name>
+        <servlet-class>com.nk.servlet.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>logoutservlet</servlet-name>
+        <url-pattern>/servlet/logout</url-pattern>
+    </servlet-mapping>
+
     <filter>
         <filter-name>characterencodingfilter</filter-name>
         <filter-class>com.nk.filter.CharacterEncodingFilter</filter-class>
@@ -24,6 +42,15 @@
     <filter-mapping>
         <filter-name>characterencodingfilter</filter-name>
         <url-pattern>/servlet/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>sysfilter</filter-name>
+        <filter-class>com.nk.filter.SysFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>sysfilter</filter-name>
+        <url-pattern>/sys/*</url-pattern>
     </filter-mapping>
 
 <!--    注册监听器-->

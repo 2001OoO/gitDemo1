@@ -29,12 +29,12 @@ public class TestPanel {
             @Override
             public void windowClosing(WindowEvent e) {
                 System.out.println("关闭ing");
+                System.exit(0);
             }
 
             @Override
             public void windowClosed(WindowEvent e) {
                 System.out.println("关闭ed");
-                System.exit(0);
             }
 
             @Override
