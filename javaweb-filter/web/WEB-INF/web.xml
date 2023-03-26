@@ -25,4 +25,14 @@
         <filter-name>characterencodingfilter</filter-name>
         <url-pattern>/servlet/*</url-pattern>
     </filter-mapping>
+
+<!--    注册监听器-->
+    <listener>
+        <listener-class>com.nk.listener.OnlineCountListener</listener-class>
+    </listener>
+
+<!--    设置session过期时间-->
+    <session-config>
+        <session-timeout>1</session-timeout>
+    </session-config>
 </web-app>

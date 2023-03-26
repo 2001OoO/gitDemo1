@@ -11,6 +11,8 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+
+  <h2>当前有 <%= pageContext.findAttribute("OnlineCount")%> </h2>
+
   </body>
 </html>
