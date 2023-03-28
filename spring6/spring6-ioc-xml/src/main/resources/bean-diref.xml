@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd">
+
+<!--    引用util注入list和map属性值-->
+    <bean id="student" class="com.nk.spring6.iocxml.dimap.Student">
+        <property name="sname" value="小妍"/>
+        <property name="sid" value="0001"/>
+<!--        引用util注入-->
+        <property name="lessons" ref="lessonList"/>
+        <property name="teacherMap" ref="teacherMap"/>
+    </bean>
+
+    <util:list id="lessonList">
+        <ref bean="lesson"/>
+        <ref bean="lesson2"/>
+    </util:list>
+    <util:map id="teacherMap">
+        <entry>
+            <key>
+                <value>2001</value>
+            </key>
+            <ref bean="teacher"/>
+        </entry>
+        <entry>
+            <key>
+                <value>2002</value>
+            </key>
+            <ref bean="teacher2"/>
+        </entry>
+    </util:map>
+
+
+
+    <bean id="teacher" class="com.nk.spring6.iocxml.dimap.Teacher">
+        <property name="teacherName" value="小张"/>
+        <property name="teacherId" value="1001"/>
+    </bean>
+
+
+    <bean id="teacher2" class="com.nk.spring6.iocxml.dimap.Teacher">
+        <property name="teacherName" value="小牛"/>
+        <property name="teacherId" value="1002"/>
+    </bean>
+
+
+    <bean id="lesson" class="com.nk.spring6.iocxml.dimap.Lesson">
+        <property name="lessonName" value="语文"/>
+    </bean>
+
+    <bean id="lesson2" class="com.nk.spring6.iocxml.dimap.Lesson">
+        <property name="lessonName" value="数学"/>
+    </bean>
+
+
+</beans>
