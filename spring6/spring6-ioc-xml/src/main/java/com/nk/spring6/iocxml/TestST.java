@@ -7,7 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class TestST {
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("bean-diref.xml");
-        Student student = (Student) applicationContext.getBean("student");
+        Student student = (Student) applicationContext.getBean("student2");
         student.run();
     }
 }
