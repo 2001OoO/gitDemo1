@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    注入map属性值-->
+
+    <bean id="student" class="com.nk.spring6.iocxml.dimap.Student">
+        <property name="sid" value="0001"/>
+        <property name="sname" value="阿猫"/>
+        <property name="teacherMap">
+            <map>
+                <entry>
+                    <key>
+                        <value>1000</value>
+                    </key>
+                    <ref bean="teacher"></ref>
+                </entry>
+                <entry>
+                    <key>
+                        <value>1001</value>
+                    </key>
+                    <ref bean="teacher2"></ref>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="teacher" class="com.nk.spring6.iocxml.dimap.Teacher">
+        <property name="teacherId" value="1001"/>
+        <property name="teacherName" value="吊猫"/>
+    </bean>
+
+    <bean id="teacher2" class="com.nk.spring6.iocxml.dimap.Teacher">
+        <property name="teacherId" value="1002"/>
+        <property name="teacherName" value="吊狗"/>
+    </bean>
+
+</beans>

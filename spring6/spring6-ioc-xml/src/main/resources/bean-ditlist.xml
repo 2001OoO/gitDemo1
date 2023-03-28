@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    注入列表属性值-->
+
+    <bean id="emp" class="com.nk.spring6.iocxml.ditest.Emp">
+        <property name="ename" value="小猫"/>
+        <property name="age" value="9"/>
+    </bean>
+
+    <bean id="emp2" class="com.nk.spring6.iocxml.ditest.Emp">
+        <property name="ename" value="小狗"/>
+        <property name="age" value="10"/>
+    </bean>
+
+    <bean id="dept" class="com.nk.spring6.iocxml.ditest.Dept">
+        <property name="dname" value="傻狗部"/>
+        <property name="empList">
+            <list>
+                <ref bean="emp"/>
+                <ref bean="emp2"/>
+            </list>
+        </property>
+    </bean>
+
+</beans>
