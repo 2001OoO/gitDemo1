@@ -12,7 +12,7 @@
                 <property name="dname" value="小鸡部"/>
             </bean>
         </property>
-
+<!--        数组类型-->
         <property name="loves">
             <array>
                 <value>吃饭</value>
