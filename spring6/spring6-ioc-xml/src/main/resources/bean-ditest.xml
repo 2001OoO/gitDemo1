@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--        外部bean注入对象类型的属性-->
+<!--    <bean id="emp" class="com.nk.spring6.iocxml.ditest.Emp">-->
+<!--        <property name="ename" value="小王"/>-->
+<!--        <property name="age" value="21"/>-->
+
+<!--        <property name="dept" ref="dept"/>-->
+<!--    </bean>-->
+<!--    -->
+<!--    <bean id="dept" class="com.nk.spring6.iocxml.ditest.Dept">-->
+<!--        <property name="dname" value="保安部"/>-->
+<!--    </bean>-->
+
+    <!--        内部bean注入对象类型的属性-->
+<!--    <bean id="emp" class="com.nk.spring6.iocxml.ditest.Emp">-->
+<!--        <property name="ename" value="小王"/>-->
+<!--        <property name="age" value="21"/>-->
+<!--        -->
+<!--        <property name="dept">-->
+<!--            <bean class="com.nk.spring6.iocxml.ditest.Dept">-->
+<!--                <property name="dname" value="保安部"/>-->
+<!--            </bean>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+<!--    级联赋值注入对象类型的属性-->
+    <bean id="emp" class="com.nk.spring6.iocxml.ditest.Emp">
+        <property name="ename" value="小王"/>
+        <property name="age" value="21"/>
+
+        <property name="dept" ref="dept"/>
+        <property name="dept.dname" value="测试部"/>
+    </bean>
+    <bean id="dept" class="com.nk.spring6.iocxml.ditest.Dept">
+        <property name="dname" value="保安部"/>
+    </bean>
+
+
+</beans>

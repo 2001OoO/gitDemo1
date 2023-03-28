@@ -9,4 +9,17 @@
 
     <bean id="userDaoImpl" class="com.nk.spring6.iocxml.bean.UserDaoImpl"/>
     <bean id="userDaoImpl2" class="com.nk.spring6.iocxml.bean.UserDaoImpl2"/>
+
+<!--    根据set方法进行注入-->
+    <bean id="book" class="com.nk.spring6.iocxml.di.Book">
+        <property name="author" value="nk3"/>
+        <property name="bname" value="java spring"/>
+    </bean>
+
+<!--    根据构造器进行注入-->
+    <bean id="book2" class="com.nk.spring6.iocxml.di.Book">
+        <constructor-arg name="author" value="nk4"/>
+        <constructor-arg name="bname" value="java spring"/>
+    </bean>
+
 </beans>
