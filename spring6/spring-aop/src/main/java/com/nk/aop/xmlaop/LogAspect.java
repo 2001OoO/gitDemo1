@@ -1,0 +1,67 @@
+package com.nk.aop.xmlaop;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.*;
+import org.springframework.stereotype.Component;
+
+import java.util.Arrays;
+
+@Component  //ioc容器
+public class LogAspect {
+
+//    设置切入点和通知类型
+//    切入点表达式: execution(访问修饰符 增强方法返回类型 增强方法的全路径 方法名称(方法参数))
+
+//    前置@Before()
+//    @Before(value = "execution(* com.nk.aop.annoaop.CalculatorImpl.*(..))")
+//    @Before(value = "pointcut()")
+    public void beforeMethod(JoinPoint joinPoint){
+        String name = joinPoint.getSignature().getName();
+        Object[] args = joinPoint.getArgs();
+        System.out.println("Logger-->前置通知，方法名称：" + name + "，参数：" + Arrays.toString(args));
+    }
+
+//    返回@AfterReturning
+//    @AfterReturning(value = "execution(public int com.nk.aop.xmlaop.CalculatorImpl.*(..))",returning = "result")
+    public void afterReturningMethod(JoinPoint joinPoint,Object result){
+        String name = joinPoint.getSignature().getName();
+        System.out.println("Logger-->返回通知，方法名称：" + name + "，结果：" + result);
+    }
+
+//    异常@AfterThrowing
+//    @AfterThrowing(value = "execution(public int com.nk.aop.xmlaop.CalculatorImpl.*(..))",throwing = "ex")
+    public void afterThrowingMethod(JoinPoint joinPoint,Throwable ex){
+        String name = joinPoint.getSignature().getName();
+        System.out.println("Logger-->异常通知，方法名称：" + name + "，异常信息：" + ex);
+    }
+
+
+//    后置@After()
+//    @After(value = "execution(public int com.nk.aop.xmlaop.CalculatorImpl.*(..))")
+    public void afterMethod(JoinPoint joinPoint){
+        String name = joinPoint.getSignature().getName();
+        System.out.println("Logger-->后置通知，方法名称：" + name);
+    }
+
+//    环绕@Around()
+//    @Around(value = "execution(public int com.nk.aop.xmlaop.CalculatorImpl.*(..))")
+    public Object aroundMethod(ProceedingJoinPoint joinPoint){
+        String name = joinPoint.getSignature().getName();
+        Object[] args = joinPoint.getArgs();
+        Object proceed = null;
+        try {
+            System.out.println("环绕通知===目标方法之前执行");
+//            调用目标方法
+            proceed = joinPoint.proceed();
+            System.out.println("环绕通知===目标方法返回值后执行");
+        } catch (Throwable throwable){
+            System.out.println("环绕通知===目标方法异常后执行");
+        } finally {
+            System.out.println("环绕通知===目标方法执行完毕后执行");
+        }
+        return proceed;
+    }
+
+
+}
