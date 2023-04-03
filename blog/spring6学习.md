@@ -131,4 +131,6 @@ jdbc.user=root
 jdbc.password=123456
 jdbc.url=jdbc:mysql://localhost:3306/demo1db?profileSQL=true
 jdbc.driver=com.mysql.jdbc.Driver
+#new
+#jdbc.driver=com.mysql.cj.jdbc.Driver
 ```
