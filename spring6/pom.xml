@@ -19,6 +19,7 @@
         <module>spring6-jdbc-tx</module>
         <module>spring6-resource</module>
         <module>spring6-i18n</module>
+        <module>spring-validator</module>
     </modules>
 
     <properties>
@@ -116,6 +117,24 @@
             <artifactId>jakarta.annotation-api</artifactId>
             <version>2.1.1</version>
         </dependency>
+
+<!--        validator依赖-->
+        <!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>8.0.0.Final</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.glassfish/jakarta.el -->
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>jakarta.el</artifactId>
+            <version>4.0.2</version>
+        </dependency>
+
+
+
 
 
     </dependencies>
